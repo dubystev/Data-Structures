@@ -28,28 +28,26 @@ void GameRecord::display() const{
 
 bool GameRecord::check_remove_duplicate(const GameEntry& e)
 {
-    for(int i = 0; i < entries.size(); i++)     // 0.5 mk
+    for(int i = 0; i < entries.size(); i++)
     {
-        if(entries[i].getName() == e.getName() && e.getScore() > entries[i].getScore())     // 0.5 mk
+        if(entries[i].getName() == e.getName() && e.getScore() > entries[i].getScore())
         {
-            entries.erase(entries.begin() + i);     // 0.5 mk
-            return true;                                     // 0.5 mk
+            entries.erase(entries.begin() + i);
+            return true;                       
         }
-        // 0.5 mk
+        
         if(entries[i].getName() == e.getName() && e.getScore() <= entries[i].getScore())
             return false;
     }
 
-    return true;                                            // 0.5 mk
+    return true;                                       
 }
 
 void GameRecord::add(const GameEntry& e)
 {
-    // 0.5 mk
     if(!check_remove_duplicate(e))
         return;
     int e_score = e.getScore();
-    // 0.5 mk
     if(entries.size() == maxEntries && e_score < entries[entries.size() - 1].getScore())
     {
         std::cout << "Nothing to place, the high score of " << e.getName() << " is not high enough" << '\n';
@@ -57,19 +55,17 @@ void GameRecord::add(const GameEntry& e)
     }
 
     bool inserted = false;
-    for(int it = 0; it < entries.size(); it++)                      // 0.5 mk
+    for(int it = 0; it < entries.size(); it++)                      
     {
-        if(e_score > entries.at(it).getScore())                     // 0.5 mk
+        if(e_score > entries.at(it).getScore())                     
         {
-            entries.insert(entries.begin() + it, e);       // 0.5 mk
-            // 0.5 mk
+            entries.insert(entries.begin() + it, e);       
             inserted = true;
             break;
         }
     }
-    if(!inserted)                           // 0.5 mk
-        entries.push_back(e);               // 0.5 mk
-    // 0.5 mk
+    if(!inserted) 
+        entries.push_back(e);       
     if(entries.size() > maxEntries)
         entries.pop_back();
 }
