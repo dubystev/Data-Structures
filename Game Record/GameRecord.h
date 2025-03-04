@@ -1,6 +1,5 @@
 //
 // Created by hp on 10/23/2024.
-// Dynamic Array Version can be found via G:\My Drive\@Codes\C_Cpp_codes
 //
 
 #ifndef GAMERECORD_H
