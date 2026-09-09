@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+// You could copy the contents into your main cpp program.
+
 int search(const std::vector<int>& arr, const int key)
 {
     int beg = 0; // initialise the beginning variable
