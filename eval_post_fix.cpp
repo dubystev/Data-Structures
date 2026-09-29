@@ -3,7 +3,7 @@
  * This program evaluates postfix expressions using the stack data structure
  */
 
-#include<stack>
+#include <stack>
 #include <iostream>
 #include <sstream>
 #include <string>
